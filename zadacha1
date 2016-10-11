@@ -1,0 +1,18 @@
+program qwer;
+uses math;
+var n,m,k,q,i,j,z:integer; z1:byte;  xk,yk,qp:array[1..100] of integer; mn: set of byte;
+begin
+ readln(n,m,k,q); //вводим матрицу, роутеры, запросы.
+ for i:=1 to k do
+  read(xk[i],yk[i]);
+  for i:=1 to q do begin
+   readln(z1);
+   mn:=mn+[z1];
+   end;
+  for i:=1 to n do
+   for j:=1 to m do
+    for z:=1 to k do
+     if max(abs(i-xk[z]),abs(j-yk[z])) in mn then writeln(abs(i-xk[z]),abs(j-yk[z]));
+
+
+end.
